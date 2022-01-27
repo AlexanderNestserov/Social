@@ -1,27 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthRoutingModule } from 'src/auth/auth-routing.module';
-import { ProfileRoutingModule } from 'src/profile/profile-routing.module';
-import { NotfoundComponent } from 'src/shared/components/notfound/notfound.component';
-import { AppComponent } from './app.component';
+import { EditDeleteComponent } from './edit-delete/edit-delete.component';
+import { ListComponent } from './list/list.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-
+    redirectTo: '/login',
+    pathMatch: 'full',
   },
   {
-    path: '**',
-    component: NotfoundComponent,
-
-  }];
+    path: 'registration',
+    component: RegisterComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'list',
+    component: ListComponent,
+  },
+  {
+    path: 'edit-delete',
+    component: EditDeleteComponent,
+  },];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    AuthRoutingModule,
-    ProfileRoutingModule
   ],
   exports: [RouterModule]
 })

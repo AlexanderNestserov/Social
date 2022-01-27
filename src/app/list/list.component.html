@@ -1,0 +1,133 @@
+<nav class="navbar navbar-dark bg-primary">
+   <div class="container">
+      <h1 style='color:antiquewhite'>Users list</h1>
+      <div class="d-flex">
+         <button (click)="clickAddList()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            class="btn btn-success">Add
+            user</button>
+      </div>
+   </div>
+</nav>
+<div class="row">
+   <div class="input-field">
+      <label for="name" class="active">Search by first name, last name, university and specialization</label>
+      <input type="text" id="name" class="validate" [(ngModel)]="search">
+   </div>
+</div>
+<table class="table mt-5">
+   <thead>
+      <tr>
+         <th scope="col">ID</th>
+         <th scope="col">Name</th>
+         <th scope="col">Surname</th>
+         <th scope="col">Age</th>
+         <th scope="col">University</th>
+         <th scope="col">Year of admission</th>
+         <th scope="col">Year of graduation</th>
+         <th scope="col">Specialization</th>
+         <th scope="col">Action</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr *ngFor="let row of listData | search:search">
+         <td>{{row.id}}</td>
+         <td>{{row.name}}</td>
+         <td>{{row.surname|slice:0:1}}</td>
+         <td>{{row.age}}</td>
+         <td>{{row.university}}</td>
+         <td>{{row.yoa}}</td>
+         <td>{{row.yog}}</td>
+         <td>{{row.specialization}}</td>
+         <td>
+            <button (click)="onEdit(row)" class="btn btn-info" type="button" data-bs-toggle="modal"
+               data-bs-target="#exampleModal">Edit</button>
+            <button (click)=" deleteList(row)" class="btn btn-danger">Delete</button>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">User details</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+
+            <form [formGroup]='formValue'>
+               <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+                     aria-describedby="emailHelp">
+                  <div *ngIf="name.invalid && (name.touched || name.dirty)">
+                     <span *ngIf="name.errors?.['required']">Name is required
+                     </span>
+                  </div>
+               </div>
+               <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Surname</label>
+                  <input type="text" formControlName="surname" class="form-control" id="exampleInputPassword1">
+                  <div *ngIf="surname.invalid && (surname.touched || surname.dirty)">
+                     <span *ngIf="surname.errors?.['required']">Surname is required
+                     </span>
+                  </div>
+               </div>
+               <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Age</label>
+                  <input name="age" type="text" formControlName="age" class="form-control" id="exampleInputPassword1">
+                  <div *ngIf="age.invalid && (age.touched || age.dirty)">
+                     <span *ngIf="age.errors?.['required']">Age is required</span>
+                     <span *ngIf="age.errors?.['min']">Value must be greater than or equal to18</span>
+                     <span *ngIf="age.errors?.['max']">Value must be less than or equal to 65</span>
+                     <span *ngIf="age.errors?.['pattern']?['/^[0-9]/']:null">Only numbers are allowed</span>
+                  </div>
+               </div>
+               <select class="form-select" formControlName="university" aria-label="Default select example">
+                  <option value="" hidden>University</option>
+                  <option value="Oxford">Oxford</option>
+                  <option value="Cambridge">Cambridge</option>
+                  <option value="BNTU">BNTU</option>
+                  <option value="MGU">MGU</option>
+                  <option value="EGU">EGU</option>
+                  <option value="BGU">BGU</option>
+                  <option value="BGUIR">BGUIR</option>
+               </select>
+               <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Year of admission</label>
+                  <input name="yoa" type="text" formControlName="yoa" class="form-control" id="exampleInputPassword1">
+                  <div *ngIf="yoa.invalid && (yoa.touched || yoa.dirty)">
+                     <span *ngIf="yoa.errors?.['pattern']?['/^[0-9]/']:null">Only numbers are allowed</span>
+                  </div>
+               </div>
+               <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Year of graduation</label>
+                  <input name="yog" type="text" formControlName="yog" class="form-control" id="exampleInputPassword1">
+                  <div *ngIf="yog.invalid && (yoa.touched || yog.dirty)">
+                     <span *ngIf="yog.errors?.['pattern']?['/^[0-9]/']:null">Only numbers are allowed</span>
+                  </div>
+               </div>
+               <select name="second" class="form-select" formControlName="specialization"
+                  aria-label="Default select example">
+                  <option value="" hidden>Specialization</option>
+                  <option value="Front">Front</option>
+                  <option value="Back">Back</option>
+                  <option value="HR">HR</option>
+                  <option value="Data">Data</option>
+                  <option value="DevOps">DevOps</option>
+                  <option value="SEO">SEO</option>
+                  <option value="Analitics">Analitics</option>
+               </select>
+            </form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">CLOSE</button>
+            <button type="button" *ngIf="showAdd" (click)=' postListDetails()' class="btn btn-primary">ADD</button>
+            <button type="button" *ngIf="showUpdate" (click)=' updateListDetails()'
+               class="btn btn-primary">UPDATE</button>
+         </div>
+      </div>
+   </div>
+</div>

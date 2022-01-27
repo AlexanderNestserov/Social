@@ -3,25 +3,35 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from '../auth/auth.module';
-import { ProfileModule } from '../profile/profile.module';
-import { NotfoundComponent } from '../shared/components/notfound/notfound.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListComponent } from './list/list.component';
+import { EditDeleteComponent } from './edit-delete/edit-delete.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {SearchPipe} from '../app/list/search.pipe'
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotfoundComponent,
+    ListComponent,
+    EditDeleteComponent,
+    LoginComponent,
+    RegisterComponent,
+    SearchPipe
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule,
-    ProfileModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

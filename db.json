@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": " Alex",
+      "surname": "Nest",
+      "age": 45,
+      "university": "BNTU",
+      "yoa": 2014,
+      "yog": 2019,
+      "specialization": "SEO"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
