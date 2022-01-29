@@ -110,6 +110,7 @@ export class ListComponent implements OnInit {
         this.getAllList();
       })
   }
+
   onEdit(row: any) {
     this.showAdd = false;
     this.showUpdate = true;
@@ -121,9 +122,8 @@ export class ListComponent implements OnInit {
     this.formValue.controls['yoa'].setValue(row.yoa);
     this.formValue.controls['yog'].setValue(row.yog);
     this.formValue.controls['specialization'].setValue(row.specialization);
-
-
   }
+
   updateListDetails() {
     this.listModelObj.name = this.formValue.value.name;
     this.listModelObj.surname = this.formValue.value.surname;

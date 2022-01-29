@@ -1,0 +1,23 @@
+.card {
+   border: none;
+   width: 500px;
+   padding: 20px;
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, 15%);
+   background: hsla(205, 46%, 30%, 1);
+   background: linear-gradient(90deg, hsla(205, 46%, 30%, 1), 0%, hsla(260, 29%, 36%, 1) 100%);
+   & a:hover {
+      color: blue;
+   }
+}
+.card h1,
+h2 {
+   color: #fff;
+}
+label {
+   color: #fff;
+}
+input[type="number"]::-webkit-inner-spin-button {
+   -webkit-appearance: none; 
+}

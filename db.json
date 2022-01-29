@@ -3,15 +3,112 @@
     {
       "id": 1,
       "name": " Alex",
-      "surname": "Nest",
+      "surname": " Nest",
       "age": 45,
+      "university": "Cambridge",
+      "yoa": 34,
+      "yog": 38,
+      "specialization": "Front"
+    },
+    {
+      "id": 2,
+      "name": "Fill",
+      "surname": "Fox",
+      "age": 21,
       "university": "BNTU",
       "yoa": 2014,
       "yog": 2019,
-      "specialization": "SEO"
+      "specialization": "HR"
+    },
+    {
+      "id": 3,
+      "name": "ryr",
+      "surname": "cdyt",
+      "age": 45,
+      "university": "EGU",
+      "yoa": 34,
+      "yog": 35,
+      "specialization": "Analitics"
     }
   ],
-  "comments": [],
+  "registration": [
+    {
+      "fullname": "Alex Nest",
+      "mobile": 375291535245,
+      "email": "alexerdeader@gmail.com",
+      "password": "problematika",
+      "id": 1
+    },
+    {
+      "fullname": "Alex Nest",
+      "mobile": 375291535245,
+      "email": "alexerdeader@gmail.com",
+      "password": "Problematika",
+      "id": 2
+    },
+    {
+      "fullname": "Alex Nest",
+      "mobile": 3456777,
+      "email": "alexerdeader@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "fullname": "Alex Fox",
+      "mobile": 123456,
+      "email": "alexerdeader@gmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "fullname": "Sasha Fox",
+      "mobile": 23456,
+      "email": "sr@gmail.com",
+      "password": "654321",
+      "id": 5
+    },
+    {
+      "fullname": "Igor Sin",
+      "mobile": 12345,
+      "email": "igir@gn.by",
+      "password": "09876",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "name": " Alex",
+      "surname": " Nest",
+      "age": 45,
+      "university": "Oxford",
+      "yoa": 34,
+      "yog": 20666,
+      "specialization": "Front"
+    },
+    {
+      "fullname": "Brad Pitt",
+      "mobile": 2356535,
+      "email": "bp@gmail.com",
+      "password": "123456",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "name": " Alex",
+      "surname": " Nest",
+      "age": 45,
+      "university": "Oxford",
+      "yoa": 34,
+      "yog": 35,
+      "specialization": "Analitics"
+    },
+    {
+      "fullname": "Alex Nest",
+      "mobile": 123456,
+      "email": "bp@gmail.com",
+      "password": "123456",
+      "id": 10
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

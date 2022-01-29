@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListComponent } from './list/list.component';
-import { EditDeleteComponent } from './edit-delete/edit-delete.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +18,6 @@ import {SearchPipe} from '../app/list/search.pipe'
   declarations: [
     AppComponent,
     ListComponent,
-    EditDeleteComponent,
     LoginComponent,
     RegisterComponent,
     SearchPipe
